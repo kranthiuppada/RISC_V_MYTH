@@ -1,3 +1,4 @@
+// GCC compile and dissemble 
 compiled by command : riscv64-unknown-elf-gcc -o1 -mabi=lp64 -march=rv64i -o sm1ton.o sm1ton.c
 command used for assembly code : riscv64-unknown-elf-objdump -d sum1toN.o | less
 assembly code for only main :
