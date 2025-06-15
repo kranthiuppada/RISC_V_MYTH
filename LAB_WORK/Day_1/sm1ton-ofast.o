@@ -1,0 +1,15 @@
+compile by command : riscv64-unknown-elf-gcc -Ofast -mabi=lp64 -march=rv64i -o sum1toN.o sum1toN.c
+command for assembly code : riscv64-unknown-elf-objdump -d sum1toN.o | less
+assembly code for main:
+
+00000000000100b0 <main>:
+   100b0:       00021537                lui     a0,0x21
+   100b4:       ff010113                addi    sp,sp,-16
+   100b8:       00f00593                li      a1,15
+   100bc:       17050513                addi    a0,a0,368 # 21170 <__clzdi2+0x3c>
+   100c0:       00113423                sd      ra,8(sp)
+   100c4:       340000ef                jal     ra,10404 <printf>
+   100c8:       00813083                ld      ra,8(sp)
+   100cc:       00000513                li      a0,0
+   100d0:       01010113                addi    sp,sp,16
+   100d4:       00008067                ret
