@@ -1,0 +1,25 @@
+command: spike pk smm1ton.o
+bbl loader
+Sum is 15
+command: spike -d pk sum1toN.o
+(spike) until pc 0 100b0
+bbl loader
+(spike) reg 0 a0
+0x0000000000000001
+(spike) 
+core   0: 0x00000000000100b0 (0x00021537) lui     a0, 0x21
+(spike) reg 0 a0
+0x0000000000021000
+(spike) reg 0 sp
+0x0000003ffffffb50
+(spike) 
+core   0: 0x00000000000100b4 (0xff010113) addi    sp, sp, -16
+(spike) reg 0 sp
+0x0000003ffffffb40
+(spike) reg 0 a1
+0x0000003ffffffb58
+(spike) 
+core   0: 0x00000000000100b8 (0x00f00593) li      a1, 15
+(spike) reg 0 a1
+0x000000000000000f
+(spike) q
