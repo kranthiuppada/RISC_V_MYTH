@@ -1,0 +1,7 @@
+//command for compile : riscv64-unknown-elf-gcc -Ofast -mabi=lp64 -march=rv64i -o SignedHighandLow.o SignedHighandLow.c
+//simulation command : spike pk SignedHighandLow.o
+//Output:
+
+bbl loader
+Highest number represented by signed long long int is -9223372036854775808.
+Lowest  number represented by signed long long int is 9223372036854775807.
