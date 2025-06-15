@@ -1,0 +1,5 @@
+//compile by command : riscv64-unknown-elf-gcc -Ofast -mabi=lp64 -march=rv64i -o UnsignedHighest.o UnsignedHighest.c
+//simulation by command : spike pk UnsignedHighest.o
+//output:
+bbl loader 
+highest number represented by unsigned long long int is 18446744073709551615
