@@ -1,0 +1,7 @@
+//command for compile : riscv64-unknown-elf-gcc -Ofast -mabi=lp64 -march=rv64i -o 1to9_custom.o 1to9_custom.c load.s
+//command for simulation : spike pk 1to9_custom.o
+// Output:
+
+bbl loader
+Sum of numbers from 1 to 9 is 45. 
+//assembly code command : riscv64-unknown-elf-objdump -d 1to9_custom.o | less 
