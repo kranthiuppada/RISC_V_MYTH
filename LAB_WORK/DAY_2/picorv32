@@ -1,0 +1,7 @@
+vim picorv32.v //gives verilog code
+vim testbench.v // gives testbench
+vim rv32im.sh //gives hexfile and use iverilog it will dump out testbench.vvp inputs are picor32.v and testbench.v
+chmod 777 rv32sim.sh // to run
+./rv32im.sh //to run
+sum of number from 1 to 2 is 3 //output
+TRAP
