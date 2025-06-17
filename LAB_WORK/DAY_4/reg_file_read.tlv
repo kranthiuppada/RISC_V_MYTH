@@ -96,13 +96,14 @@
          $is_addi = $dec_bits ==? 11'bx_000_0010011;
          $is_add = $dec_bits ==? 11'b0_000_0110011;
         //RegisterFileRead
+         $rf_wr_en = $rd_valid;
+         $rf_wr_index[4:0] = $rd;
          $rf_rd_en1 = $rs1_valid;
          $rf_rd_index1[4:0] = $rs1;
          $rf_rd_en2 = $rs2_valid;
-         $rf_rd_index2[4:0] = $rs2;
+         $rf_rd_index2[4:0] = $rs2;     
          $src1_value[31:0] = $rf_rd_data1;
          $src2_value[31:0] = $rf_rd_data2;
-          
           
           
       // YOUR CODE HERE
