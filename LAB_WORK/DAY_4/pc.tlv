@@ -40,12 +40,10 @@
    |cpu
       @0
          $reset = *reset;
-         $pc[31:0] = (>>1$reset)
-                   ? 32'd0:
-                   >>1$pc[31:0] + 32'd4;
+         
+         $pc[31:0] = (>>1$reset) ? 32'd0 : (>>1$pc + 32'd4);
 
-      // YOUR CODE HERE
-      // ...
+   
 
       // Note: Because of the magic we are using for visualisation, if visualisation is enabled below,
       //       be sure to avoid having unassigned signals (which you might be using for random inputs)
