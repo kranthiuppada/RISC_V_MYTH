@@ -207,13 +207,16 @@ Explored the use of `$`-prefixed signals to create and maintain state in TL-Veri
   1. Go to [Makerchip](makerchip.com) and click on launch makerchip IDE.
   2. Go to editor and place the below TL-Verilog in place of //...
 
-				$sum[31:0] = $val1[31:0] + $val2[31:0];
-		   		$diff[31:0] = $val1[31:0] - $val2[31:0];
-		   		$prod[31:0] = $val1[31:0] * $val2[31:0];
-		   		$quot[31:0] = $val1[31:0] / $val2[31:0];
-		​		$out[31:0] = $op[0] ? $sum : $op[1] ? $diff : $op[2] ? $prod : $qout ;
-				$out[31:0] = $val1[31:0]
+                                      $val1[31:0] = >>$out;
+                                     $val2[31:0] = $rand2[3:0];
+                                     $op[1:0] = $rand[1:0];
 
+                                     $sum[31:0]  = $val1 + $val2;
+                                     $diff[31:0] = $val1 - $val2;
+                                     $prod[31:0] = $val1 * $val2;
+                                     $quot[31:0] = $val2 == 0 ? 32'b0 : $val1 / $val2;
+
+              $out[31:0] = $reset ? 32'b0 :  $op == 2'b00 ? $sum :  $op == 2'b01 ? $diff : $op == 2'b10 ? $prod : $quot;
   3. Then click on 'compile'.
 
      ![Image](https://github.com/user-attachments/assets/45f97c4b-64a8-48e7-a049-5518f486737c)
