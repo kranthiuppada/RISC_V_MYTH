@@ -335,10 +335,13 @@ Program Counter is a register that contains the address of the next instruction 
 For the initial state, before fetching the first ever instruction, there is a presence of a reset signal that will reset the PC value to 0.
 
 For branch instructions, we will have immediate instructions, for which we have to add an offset value to the PC. So for branch instructions, NextPC = Incremented PC + Offset value.
+![Image](https://github.com/user-attachments/assets/3b312e0e-9000-4643-a89a-a1817e676e3e)
+
 
 2. Instruction Fetch Logic
 
 Here the instruction memory is added to the program. In the Instruction Fetch logic, the instructions are fetched from the instruction memory amd passed to the Decode logic for computation. The instruction memory read address pointer is computed from the program counter and it outputs a 32 bit instruction. (instr[31:0]) . In our case, the Makerchip shell provides us an instantiation to the instruction memory, which contains a test program to compute the sum of numbers from 1 to 9.
+![Image](https://github.com/user-attachments/assets/b13ff2d6-d0c0-4924-b3bb-9b8dfcc7cc25)
 
 3. Instruction Decode Logic
    
@@ -351,12 +354,14 @@ Next we calculate the 32 bit immediate value (imm[31:0]) based on the instructio
 Other instruction fields like funct7, rs2, rs1, funct3, rd and opcode are extracted from the 32-bit instruction based on the instruction type. We collect all the bit values of funct7, funct3, opcode, rs2, rs1 and rd into a single vector and then decode the type of instruction. At this point valid condtions need to be defined for fields like rs1, rs2, funct3 and funct7 because they are unique to only certain instruction types.
 
 Only 8 operations are implemented at this stage namely BEQ, BNE, BLT, BGE, BLTU, BGEU, ADDI and ADD. The other operations from the RV32I Base Instruction Set will be implemented in the later steps. To see the complete list with the associated instruction fields.
+![Image](https://github.com/user-attachments/assets/1af96ff8-1b6a-49be-a733-dd6f36229198)
 
 4. Register File Read
 
 Most of the instructions are arithmetic instructions or other instructions operating on the source registers. We do regitser file read of these source registers. The register file is provided in the shell to us by the macro instantiation //m4+rf (@1, @1) , which can be viewed under the "NAV-TLV" tab on Makerchip. This macro provides us with a register file that defines the interface signals. The register file of the CPU is capable of performing 2 reads in one cycle, of the source operands, and 1 write per cycle of the desination register.
 
 The two source register fields defined as rs1 and rs2 are fed as inputs to the register file and the outputs are the contents of the source registers. The respective enable bits are set based on the valid conditions for rs1 and rs2 as defined in the previous step. Here, since we are accessing two register files at the same time, hence it is callled as 2-port register file.
+![Image](https://github.com/user-attachments/assets/d78be1b3-31ec-47d9-847e-d106c008119f)
 
 5. Arithmetic and Logic Unit(ALU)
 
@@ -365,8 +370,8 @@ The Arithmetic Logic Unit is the component that computes the result based on the
 6. Register File Write
 
 This step is essential to provide support for instructions that have a destination register (rd) where the output must be stored. The result of the ALU is written back to the memory using the register_file_write port. The register_file_write_enable depends on the validity of the destination register "rd" . The register_file_write_index then takes the value stored in destination register, rd and loads it into the memory in the location as pointed by the register_file_write_index. Since, in RISC-V architecture, x0 register is a hardwired register, whic is always equal to zero, hence it must be made sure that no write operartion is performed on the x0 register. For this, an additional condition to ignore write operation, if the destinaton register is x0 , has been also added.
+![Image](https://github.com/user-attachments/assets/cda404bf-3360-4dc5-bab4-cad5fd4c8920)
 
-Block diagram of a 2-port Register File, with 2 Read and 1 Write per cycle:
 
 7. Memory File
 
@@ -375,6 +380,7 @@ In addition to all of these, we also have a Memory file for which we have load a
 8. Branches Instructions
 
 The final step is to add support for branch instructions. In RISC-V ISA, branches are conditional in nature, which means based on a particular condtion, a specific branch is being taken. Moreover, a branch target pc has to be computed and based on the branch taken value, the pc will choose the new branch target pc when required.
+![Image](https://github.com/user-attachments/assets/9fa9fa03-c653-4731-bff5-2a1ddb33accf)
 
 TESTBENCH:
 Now that the implementation is complete, a simple testbench statement can be added to ensure whether the core is working correctly or not. The "passed" and "failed" signals are used to communicate with the Makerchip platform to control the simulation. It tells the platform whther the simulation passed without any errors, failed with a list of errors that can be inferred from the log files, and hence to stop the simulation, if failed.
@@ -383,6 +389,7 @@ When the following line of code as mentioned below is added on Makerchip, the si
 
 *passed = |cpu/xreg[10]>>5$value == (1+2+3+4+5+6+7+8+9);
 Here, in the instruction memory, register r10 has been used to store the sum value. The simulation passed message can be seen under the "Log" tab. We have used ">>5" (ahead by 5) operator, because instead of stopping the simulator immediately, we wait for a couple of more cycles so as to see a little bit more on the waveform.
+
 ## Labs for day 4
 
 **1. Fetch and Decode**
