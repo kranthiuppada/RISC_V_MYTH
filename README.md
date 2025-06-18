@@ -32,10 +32,24 @@ RISC-V is an open standard instruction set architecture based on established red
   <summary>Day 1: Introduction to RISC-V ISA and GNU compiler toolchain</summary>
   	
 ## Day 1 : Introduction to RISC-V ISA and GNU compiler toolchain
- ISA is nothing but a language of the computer.This is the way we are going to talk to the computers.
- - course about:
-   If a c program is neede to implement on a hardware ,first c program is compiled in its assembly language and converted  into machine language and these bits       are executed in layout.
+
+- ## ISA
+  ISA is nothing but a language of the computer.This is the way we are going to talk to the computers.
+  If a c program is neede to implement on a hardware ,first c program is compiled in its assembly language and converted  into machine language and these bits  are executed in layout.
+   ![Image](https://github.com/user-attachments/assets/f593b7c9-6b7d-434c-816b-6e3dce7bdd18)
+- ## Binary number system 
+    The binary number system  contains only two numbers that are 0 and 1 and a bit is the digit of a binary number a group og 8 bits is called a byte and a group of 32 bits is called a word. Similarly a group of     64 bits is called a doubleword.
+    If i a have a 2-bit binary number the number of possible pattern for these two numbers are 00,01,10,11. Only these are the 4 combinations of a 2-bit binary number. The number of possiblities of binary number     having `n` number of bits can be calculated by the following formula:
+    2^n suppose i have a 5-bit number the  number of possiblities is 2 * 2 * 2 * 2 * 2 = **32 possiblities**
   
+ - ##  Unsigned numbers
+      In binary, an unsigned number is a representation of a non-negative integer, meaning it only represents positive whole numbers and zero. It doesn't have a sign bit to indicate positivity or negativity.           Like  00000001 is a binary number equivalent to decimal number 1 
+   i  t does not have a sign bit to indicate whether this number is positive or negative in its MSD (Most significant Bit).
+
+ - ##  Signed numbers
+      In the binary system, a signed number representation uses the most significant bit (MSB) to indicate the sign of the number. If the MSB is 0, the number is positive; if it's 1, the number is negative. Like       10000010 is a 8-bit number  the MSB of this number is `1`
+      so the number will be in negative the rest of the number detemines the original value of the number which is 0.
+
 
 ## Labs for Day 1  
 **1. Simple c program for adding numbers between 1 to n**
