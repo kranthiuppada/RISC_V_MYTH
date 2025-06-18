@@ -1,6 +1,8 @@
 # RISC_V_MYTH
+
 About Summary of the RISC-V based MYTH workshop organized by VSD and Redwood EDA, including daily coding tasks from C to TL-Verilog and final CPU design.
 
+---
 ## 📅 Workshop Day-wise Index
 
 - [Day 1: Introduction to RISC-V ISA and GNU toolchain](https://github.com/kranthiuppada/RISC_V_MYTH/tree/main/LAB_WORK/Day_1)
@@ -9,10 +11,13 @@ About Summary of the RISC-V based MYTH workshop organized by VSD and Redwood EDA
 - [Day 4: Basic RISC-V CPU Micro-architecture](https://github.com/kranthiuppada/RISC_V_MYTH/tree/main/LAB_WORK/DAY_4)
 - [Day 5: Pipelined RISC-V CPU Implementation](https://github.com/kranthiuppada/RISC_V_MYTH/tree/main/LAB_WORK/DAY_5)
 
+---
 
 # Introduction to RISC-V ISA
 
 RISC-V is an open standard instruction set architecture based on established reduced instruction set computer(RISC) principles. It was first started by Prof. Krste Asanović and graduate students Yunsup Lee and Andrew Waterman in May 2010 as part of the Parallel Computing Laboratory, at UC Berkeley. Unlike most other ISA designs, the RISC-V ISA is provided under open source licenses that do not require fees to use, which provides it a huge edge over other commercially available ISAs. It is a simple, stable, small standard base ISA with extensible ISA support, that has been redefining the flexibility, scalability, extensibility, and modularity of chip designs. This has made it easier and flexible for anyone to build a processor on his own at almost zero cost. 
+
+---
 
 ## What’s Different About RISC-V?
 
@@ -23,6 +28,7 @@ RISC-V is an open standard instruction set architecture based on established red
    - **Modular:** RISC-V has a small standard base ISA, with multiple standard extensions.
    - **Stable:** Base and first standard extensions are already frozen. There is no need to worry about major updates.
    - **Extensibility:** Specific functions can be added based on extensions. There are many more extensions are under development, such as Vector.
+---
 
 # Summary of this workshop
 
@@ -98,6 +104,8 @@ Run the following steps in terminal:
 Then you should see the same result as:
 
 ![image](https://github.com/user-attachments/assets/8e469627-92ab-4e73-9670-6e5e4ab942c8)
+
+ [Click here to view all TL-Verilog files for Day 3](https://github.com/kranthiuppada/RISC_V_MYTH/tree/main/LAB_WORK/Day_1)
 
 </details>
 
@@ -627,6 +635,8 @@ Here, in the instruction memory, register r10 has been used to store the sum val
 
 **This TL-Verilog code is the final code for a basic 1 to 9 summer with the write and read register, ALU, Branch etc.**
 
+ [Click here to view all TL-Verilog files for Day 3](https://github.com/kranthiuppada/RISC_V_MYTH/tree/main/LAB_WORK/DAY_4)
+
 
 </details>
 
@@ -848,16 +858,66 @@ This is the link to my work [CPU](https://myth.makerchip.com/sandbox/02kfkhXA6/0
 
 ![Image](https://github.com/user-attachments/assets/4099fd92-af77-4020-b147-12fc942ff32f)
 
+ [Click here to view all TL-Verilog files for Day 3](https://github.com/kranthiuppada/RISC_V_MYTH/tree/main/LAB_WORK/DAY_5)
+
 
 </details>
 
 
 ******************************************************************************************************************************************************
 
+## 🧰 Technologies Used
+
+- **RISC-V GCC Toolchain** (`riscv64-unknown-elf-gcc`)
+  - Compiled C programs to RISC-V object files and assembly.
+  
+- **RISC-V ABI (Application Binary Interface)**
+  - Defined how function arguments and return values are handled using registers like `a0–a7`, `t0–t6`, `s0–s11`.
+
+- **Spike RISC-V ISA Simulator**
+  - Simulated RISC-V binary programs to test behavior and output.
+
+- **PK (Proxy Kernel)**
+  - Enabled user programs to run on the Spike simulator.
+
+- **GDB (GNU Debugger for RISC-V)**
+  - Used to inspect register values, step through execution, and debug.
+
+- **objdump**
+  - Disassembled binary files to examine the generated assembly code.
+
+- **Makerchip**
+  - Web-based IDE for writing and simulating TL-Verilog designs (used in later days).
+
+- **VirtualBox**
+  - Used to run the pre-configured Linux environment for RISC-V development on Windows.
+
+- **leafpad**
+  - Wrote and compiled code in a user-friendly development environment.
+
+
+---
+
 ## Acknowlegedgements: 
 
 I would thank to Kunal Ghosh sir who guided us over this workshop and also taught us the first two days of this workshop. I will also express my gratitude to Steve Hoover sir who taught us in the last 3 days.
 
+---
+
+## 📜 License
+
+This project is licensed under the [MIT License](LICENSE).  
+
+
+---
+
+## 👩‍💻 Author
+
+**Kranthi Uppada**  
+B.Tech ECE | Digital Design Enthusiast  
+[GitHub Profile](https://github.com/kranthiuppada)
+
+---
 
 
 
