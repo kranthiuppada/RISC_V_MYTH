@@ -109,6 +109,13 @@ Then you should see the same result as:
    2)load only operates on two register,one immediate  they are called I- type instructions.
    3)store only operates only on  source registers they are called S- type instructions.
     
+    ![Image](https://github.com/user-attachments/assets/6a0f7b36-1e51-40c0-a418-5a05b8f57328)
+ -  observations:
+      all registers in all 3 types having 5 bits so
+    total no of registers = 2^5 = 32 registers.
+ -  ABI does a system call through these particular registers ABI name give to register.
+    These are ABI names through which programmer access the RISC-V CPU core through some system call function.
+    
 ## Labs for Day 2
 
 **1. simulating the 1 to n adder but using ABI**
