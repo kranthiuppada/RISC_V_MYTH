@@ -87,6 +87,7 @@ Then you should see the same result as:
   <summary>Day 2: Introduction to ABI and basic verification flow</summary>
 
 ## Labs for Day 2
+
 **1. simulating the 1 to n adder but using ABI**
 
 Run the following steps in the terminal:
@@ -259,10 +260,6 @@ Explored the use of `$`-prefixed signals to create and maintain state in TL-Veri
       ![Image](https://github.com/user-attachments/assets/150753d3-e48a-4a8e-8db3-070dd5a8bf84)
 
   [Click here to view all TL-Verilog files for Day 3](https://github.com/kranthiuppada/RISC_V_MYTH/tree/main/LAB_WORK/DAY_3)
-
-## References
-- [Workshop Slides (Day 3)](https://github.com/stevehoover/RISC-V_MYTH_Workshop)
-
   
    </details>
 
