@@ -41,7 +41,7 @@ RISC-V is an open standard instruction set architecture based on established red
 
 - ## ISA
   ISA is nothing but a language of the computer.This is the way we are going to talk to the computers.
-  If a c program is neede to implement on a hardware ,first c program is compiled in its assembly language and converted  into machine language and these bits  are executed in layout.
+  If a c program is needed to implement on a hardware ,first c program is compiled in its assembly language and converted  into machine language and these bits  are executed in layout.
    ![Image](https://github.com/user-attachments/assets/f593b7c9-6b7d-434c-816b-6e3dce7bdd18)
 - ## Binary number system 
     The binary number system  contains only two numbers that are 0 and 1 and a bit is the digit of a binary number a group og 8 bits is called a byte and a group of 32 bits is called a word. Similarly a group of     64 bits is called a doubleword.
@@ -116,8 +116,9 @@ Then you should see the same result as:
 	
 ## Day 2 : Introduction to ABI and basic verification flow
 	
-##topics covered
- - What is ABI
+## Topics covered
+ - What is ABI?
+   
     An Application Binary Interface (ABI) is a standard that defines the interface between compiled applications and the operating system, or between different binary modules. ABIs define the rules that compilers and assemblers must follow when generating binary code, ensuring that different code modules can be linked together and executed seamlessly.
 
   ![Image](https://github.com/user-attachments/assets/61d0c9c8-6b2b-420a-9968-fdc337c46e94)
@@ -127,20 +128,28 @@ Then you should see the same result as:
 
     ![image](https://github.com/user-attachments/assets/10ff3f1e-280b-4c0d-ad70-dafc0aa67590)
 
-    Focus on ‘rs2’ and ‘rs1’. They have 5 bits. Practically, to keep design simple, all registers in a RISC-V architecture is represented by 5-bit binary pattern.    Now the calculation is easy. 5-bits to represent registers, which means total number of registers is 2^5 = 32 registers
+    Focus on ‘rs2’ and ‘rs1’. They have 5 bits. Practically, to keep design simple, all registers in a RISC-V architecture is represented by 5-bit binary pattern.    Now the calculation is easy. 5-bits to represent registers, which means total number of registers is 2^5 = 32 registers.
+   
  -  conclusion:
+   
     ld x8, 16(x23)
     add x8, x24, x8
     sd x8, 8(x23)
- these instructions which operate on signed or unsigned integers are called base integer instructions RV64I. tructions.
+    
+ these instructions which operate on signed or unsigned integers are called base integer instructions RV64I. 
+ 
    1)add only operates on register they are called R- type instructions.
+   
    2)load only operates on two register,one immediate  they are called I- type instructions.
+   
    3)store only operates only on  source registers they are called S- type instructions.
     
-    ![Image](https://github.com/user-attachments/assets/6a0f7b36-1e51-40c0-a418-5a05b8f57328)
+![Image](https://github.com/user-attachments/assets/6a0f7b36-1e51-40c0-a418-5a05b8f57328)
+    
  -  observations:
-      all registers in all 3 types having 5 bits so
-    total no of registers = 2^5 = 32 registers.
+ -  
+   all registers in all 3 types having 5 bits sototal no of registers = 2^5 = 32 registers.
+
  -  ABI does a system call through these particular registers ABI name give to register.
     These are ABI names through which programmer access the RISC-V CPU core through some system call function.
     
@@ -336,7 +345,7 @@ Explored the use of `$`-prefixed signals to create and maintain state in TL-Veri
 
 The various logical blocks involved in the design of a basic RISC-V CPU Core are as follows:
 
-1. Program Counter(PC) and Next PC Logic
+## 1. Program Counter(PC) and Next PC Logic
 
 Program Counter is a register that contains the address of the next instruction to be executed. It is a pointer into the instruction memory, for the instruction that we are going to execute next. Since the memory is byte addressable and each instruction length is 32 bits, the Program Counter adder adds 4 bytes to the address to point to the next address.
 
@@ -346,12 +355,12 @@ For branch instructions, we will have immediate instructions, for which we have 
 ![Image](https://github.com/user-attachments/assets/3b312e0e-9000-4643-a89a-a1817e676e3e)
 
 
-2. Instruction Fetch Logic
+## 2. Instruction Fetch Logic
 
 Here the instruction memory is added to the program. In the Instruction Fetch logic, the instructions are fetched from the instruction memory amd passed to the Decode logic for computation. The instruction memory read address pointer is computed from the program counter and it outputs a 32 bit instruction. (instr[31:0]) . In our case, the Makerchip shell provides us an instantiation to the instruction memory, which contains a test program to compute the sum of numbers from 1 to 9.
 ![Image](https://github.com/user-attachments/assets/b13ff2d6-d0c0-4924-b3bb-9b8dfcc7cc25)
 
-3. Instruction Decode Logic
+## 3. Instruction Decode Logic
    
 In the Instruction Decode logic, all the instructions are decoded for the type of instruction, immediate instructions and the field type instructions. The opcode values are translated into instructions, and all the bit values are interpreted as per defined in the RISC-V ISA.
 
@@ -364,33 +373,34 @@ Other instruction fields like funct7, rs2, rs1, funct3, rd and opcode are extrac
 Only 8 operations are implemented at this stage namely BEQ, BNE, BLT, BGE, BLTU, BGEU, ADDI and ADD. The other operations from the RV32I Base Instruction Set will be implemented in the later steps. To see the complete list with the associated instruction fields.
 ![Image](https://github.com/user-attachments/assets/1af96ff8-1b6a-49be-a733-dd6f36229198)
 
-4. Register File Read
+## 4. Register File Read
 
 Most of the instructions are arithmetic instructions or other instructions operating on the source registers. We do regitser file read of these source registers. The register file is provided in the shell to us by the macro instantiation //m4+rf (@1, @1) , which can be viewed under the "NAV-TLV" tab on Makerchip. This macro provides us with a register file that defines the interface signals. The register file of the CPU is capable of performing 2 reads in one cycle, of the source operands, and 1 write per cycle of the desination register.
 
 The two source register fields defined as rs1 and rs2 are fed as inputs to the register file and the outputs are the contents of the source registers. The respective enable bits are set based on the valid conditions for rs1 and rs2 as defined in the previous step. Here, since we are accessing two register files at the same time, hence it is callled as 2-port register file.
 ![Image](https://github.com/user-attachments/assets/d78be1b3-31ec-47d9-847e-d106c008119f)
 
-5. Arithmetic and Logic Unit(ALU)
+## 5. Arithmetic and Logic Unit(ALU)
 
 The Arithmetic Logic Unit is the component that computes the result based on the selected operation. The ALU operates on the contents of the two registers coming out of the register file. It performs the respective arithmetic operation on the two registers, and finally the result of the ALU is written back to the memory using the register file write port. At this point, the code only supports ADD and ADDI operations to execute the test code. All operations will be added at a later step.
 
-6. Register File Write
+## 6. Register File Write
 
 This step is essential to provide support for instructions that have a destination register (rd) where the output must be stored. The result of the ALU is written back to the memory using the register_file_write port. The register_file_write_enable depends on the validity of the destination register "rd" . The register_file_write_index then takes the value stored in destination register, rd and loads it into the memory in the location as pointed by the register_file_write_index. Since, in RISC-V architecture, x0 register is a hardwired register, whic is always equal to zero, hence it must be made sure that no write operartion is performed on the x0 register. For this, an additional condition to ignore write operation, if the destinaton register is x0 , has been also added.
 ![Image](https://github.com/user-attachments/assets/cda404bf-3360-4dc5-bab4-cad5fd4c8920)
 
 
-7. Memory File
+## 7. Memory File
 
 In addition to all of these, we also have a Memory file for which we have load and store instructions. The Store instruction is going to write a value fetched from the register file into the memory. The Load instruction is going to access the memory, take the value from it and them load it into the register file.
 
-8. Branches Instructions
+## 8. Branches Instructions
 
 The final step is to add support for branch instructions. In RISC-V ISA, branches are conditional in nature, which means based on a particular condtion, a specific branch is being taken. Moreover, a branch target pc has to be computed and based on the branch taken value, the pc will choose the new branch target pc when required.
 ![Image](https://github.com/user-attachments/assets/9fa9fa03-c653-4731-bff5-2a1ddb33accf)
 
-TESTBENCH:
+## TESTBENCH
+
 Now that the implementation is complete, a simple testbench statement can be added to ensure whether the core is working correctly or not. The "passed" and "failed" signals are used to communicate with the Makerchip platform to control the simulation. It tells the platform whther the simulation passed without any errors, failed with a list of errors that can be inferred from the log files, and hence to stop the simulation, if failed.
 
 When the following line of code as mentioned below is added on Makerchip, the simulation will pass only if the value stored in r10 = sum of numbers from 1 to 9.
@@ -892,13 +902,10 @@ This is the link to my work [CPU](https://myth.makerchip.com/sandbox/02kfkhXA6/0
 - **VirtualBox**
   - Used to run the pre-configured Linux environment for RISC-V development on Windows.
 
-- **leafpad**
-  - Wrote and compiled code in a user-friendly development environment.
-
 
 ---
 
-## Acknowlegedgements: 
+## Acknowledgements: 
 
 I would thank to Kunal Ghosh sir who guided us over this workshop and also taught us the first two days of this workshop. I will also express my gratitude to Steve Hoover sir who taught us in the last 3 days.
 
