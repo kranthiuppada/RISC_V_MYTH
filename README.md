@@ -321,7 +321,10 @@ Explored the use of `$`-prefixed signals to create and maintain state in TL-Veri
 <details>
   <summary>Day 4: Basic RISC-V CPU microarchitecture</summary>
   ## Basic structure of RISC-V CPU microarchitecture
-  
+
+   This section will walk you through the different implementation steps followed to achieve the design of the complete RISC-V CPU core.
+
+
 
 #### PC MUX
 In RISC-V, the PC MUX (Program Counter Multiplexer) is a circuit that selects the next instruction to be executed based on various factors, including the type of instruction.
