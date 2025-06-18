@@ -201,7 +201,7 @@ Explored the use of `$`-prefixed signals to create and maintain state in TL-Veri
 
   3. Then click on 'compile'.
 
-   ![Image](https://github.com/user-attachments/assets/4b881ad3-254e-4eea-94aa-9346efdedcdc)
+     ![Image](https://github.com/user-attachments/assets/4b881ad3-254e-4eea-94aa-9346efdedcdc)
 - Sequential Calculator:
  
   1. Go to [Makerchip](makerchip.com) and click on launch makerchip IDE.
@@ -215,7 +215,8 @@ Explored the use of `$`-prefixed signals to create and maintain state in TL-Veri
 				$out[31:0] = $val1[31:0]
 
   3. Then click on 'compile'.
-   screenshot
+
+     ![Image](https://github.com/user-attachments/assets/45f97c4b-64a8-48e7-a049-5518f486737c)
 - Fibonacci Series:
 
   The Fibonacci Sequence is a sequence of whole numbers starting with two 1s, where each subsequent value in the sequence is the sum of the previous two values.
