@@ -105,7 +105,7 @@ Then you should see the same result as:
 
 ![image](https://github.com/user-attachments/assets/8e469627-92ab-4e73-9670-6e5e4ab942c8)
 
- [Click here to view all TL-Verilog files for Day 3](https://github.com/kranthiuppada/RISC_V_MYTH/tree/main/LAB_WORK/Day_1)
+ [Click here to view all TL-Verilog files for Day 1](https://github.com/kranthiuppada/RISC_V_MYTH/tree/main/LAB_WORK/Day_1)
 
 </details>
 
@@ -193,7 +193,7 @@ Then you will see the following results after this:
 
 ![image](https://github.com/user-attachments/assets/43e37975-ee6d-4f8e-8bd2-844452451f75)
 
- [Click here to view all TL-Verilog files for Day 3](https://github.com/kranthiuppada/RISC_V_MYTH/tree/main/LAB_WORK/DAY_2)
+ [Click here to view all TL-Verilog files for Day 2](https://github.com/kranthiuppada/RISC_V_MYTH/tree/main/LAB_WORK/DAY_2)
 
 </details>
 
@@ -635,7 +635,7 @@ Here, in the instruction memory, register r10 has been used to store the sum val
 
 **This TL-Verilog code is the final code for a basic 1 to 9 summer with the write and read register, ALU, Branch etc.**
 
- [Click here to view all TL-Verilog files for Day 3](https://github.com/kranthiuppada/RISC_V_MYTH/tree/main/LAB_WORK/DAY_4)
+ [Click here to view all TL-Verilog files for Day 4](https://github.com/kranthiuppada/RISC_V_MYTH/tree/main/LAB_WORK/DAY_4)
 
 
 </details>
@@ -858,7 +858,7 @@ This is the link to my work [CPU](https://myth.makerchip.com/sandbox/02kfkhXA6/0
 
 ![Image](https://github.com/user-attachments/assets/4099fd92-af77-4020-b147-12fc942ff32f)
 
- [Click here to view all TL-Verilog files for Day 3](https://github.com/kranthiuppada/RISC_V_MYTH/tree/main/LAB_WORK/DAY_5)
+ [Click here to view all TL-Verilog files for Day 5](https://github.com/kranthiuppada/RISC_V_MYTH/tree/main/LAB_WORK/DAY_5)
 
 
 </details>
