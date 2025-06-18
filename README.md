@@ -253,6 +253,7 @@ Explored the use of `$`-prefixed signals to create and maintain state in TL-Veri
             			$cc[4:0] = sqrt($cc_sq);
 	    
    3. Then click on 'compile'.
+      ![Image](https://github.com/user-attachments/assets/150753d3-e48a-4a8e-8db3-070dd5a8bf84)
  -Final calculator with validity and memory:
  
    1. Go to [Makerchip](makerchip.com) and click on launch makerchip IDE.
