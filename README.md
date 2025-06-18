@@ -105,7 +105,7 @@ Then you should see the same result as:
 
 ![image](https://github.com/user-attachments/assets/8e469627-92ab-4e73-9670-6e5e4ab942c8)
 
- [Click here to view all TL-Verilog files for Day 1](https://github.com/kranthiuppada/RISC_V_MYTH/tree/main/LAB_WORK/Day_1)
+ [Click here to view all files for Day 1](https://github.com/kranthiuppada/RISC_V_MYTH/tree/main/LAB_WORK/Day_1)
 
 </details>
 
@@ -161,7 +161,9 @@ Then you should see the same result as:
 **1. simulating the 1 to n adder but using ABI**
 
 Run the following steps in the terminal:
+
 1. Open the terminal and make a file names 1to9_custom.c
+   
 2. and type this in it
    
         #include <stdio.h>
@@ -204,7 +206,7 @@ Then you will see the following results after this:
 
 ![image](https://github.com/user-attachments/assets/43e37975-ee6d-4f8e-8bd2-844452451f75)
 
- [Click here to view all TL-Verilog files for Day 2](https://github.com/kranthiuppada/RISC_V_MYTH/tree/main/LAB_WORK/DAY_2)
+ [Click here to view all  files for Day 2](https://github.com/kranthiuppada/RISC_V_MYTH/tree/main/LAB_WORK/DAY_2)
 
 </details>
 
@@ -237,6 +239,7 @@ Explored the use of `$`-prefixed signals to create and maintain state in TL-Veri
 
 
 ## Labs Completed
+
 - Inverter
   1. Go to [Makerchip](makerchip.com) and click on launch makerchip IDE.
   2. Go to editor and place the below TL-Verilog in place of //...
@@ -339,6 +342,7 @@ Explored the use of `$`-prefixed signals to create and maintain state in TL-Veri
 
 <details>
   <summary>Day 4: Basic RISC-V CPU microarchitecture</summary>
+	
   ## Basic structure of RISC-V CPU microarchitecture
 
    This section will walk you through the different implementation steps followed to achieve the design of the complete RISC-V CPU core.
@@ -656,21 +660,28 @@ Here, in the instruction memory, register r10 has been used to store the sum val
 
 <details>
   <summary>Day 5: Complete Pipelined RISC-V CPU micro-architecture</summary>
-  ## Day 5: Complete Pipelined RISC-V CPU micro-architecture
+	
+  ##  Day 5: Complete Pipelined RISC-V CPU micro-architecture
 	
 The RISC-V core designed is divided into 5 pipeline stages. Pipelining in Makerchip is extremely simple. To define a pipeline use the following syntax:
 
 |<pipeline_name>
+
   @<pipeline_stage>
     instruction1 in the current stage
     instruction2 in the current stage
+    
     .
     .
+    
   @<pipeline_stage>
     instruction1 in the current stage
     instruction2 in the current stage
+
     .
     .
+    
+    
 Staging in a pipeline is a physical attribute with no impact to behaviour. At this point support for register file bypass is provided. All the instructions present in the RV32I base instruction set are implemented apart from FENCE, ECALL and EBREAK.
 
 ## block diagram:
