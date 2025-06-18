@@ -846,13 +846,18 @@ This is the link to my work [CPU](https://myth.makerchip.com/sandbox/02kfkhXA6/0
 
 ## output :
 
-
+![Image](https://github.com/user-attachments/assets/4099fd92-af77-4020-b147-12fc942ff32f)
 
 
 </details>
 
 
 ******************************************************************************************************************************************************
+
+## Acknowlegedgements: 
+
+I would thank to Kunal Ghosh sir who guided us over this workshop and also taught us the first two days of this workshop. I will also express my gratitude to Steve Hoover sir who taught us in the last 3 days.
+
 
 
 
