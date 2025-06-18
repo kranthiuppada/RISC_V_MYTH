@@ -140,12 +140,58 @@ Then you will see the following results after this:
 <details>
   <summary>Day 3: Digital Logic with TL-Verilog and Makerchip</summary>
 
-  ## Labs for Day 3
+# Day 3 – Digital Logic with TL-Verilog
 
-**1. Combinational calculator**
+## Topics Covered
 
-1. Go to [Makerchip](makerchip.com) and click on launch makerchip IDE.
-2. Go to editor and place the below TL-Verilog in place of //...
+### ➤ Logic Gates using TL-Verilog
+Learned how to implement basic logic gates like AND, OR, NOT, and XOR using TL-Verilog. These gates form the foundation of digital circuit design.
+
+### ➤ Makerchip IDE Introduction
+Got familiar with the Makerchip platform, a web-based IDE for TL-Verilog. Explored live simulation, waveform viewing, and real-time logic visualization.
+
+### ➤ Combinational Logic (Adders, Muxes)
+Built combinational circuits such as adders and multiplexers that compute outputs purely based on the current inputs without memory or clock.
+
+### ➤ Sequential Logic (Counters, Registers)
+Designed logic that depends on clock cycles and stores state across time using registers. Created a basic counter to reinforce clocked logic.
+
+### ➤ Pipelined Logic
+Implemented pipelining using TL-Verilog’s timing abstraction. This helps in breaking large operations into stages to increase throughput.
+
+### ➤ State Variables
+Explored the use of `$`-prefixed signals to create and maintain state in TL-Verilog, like program counters and accumulators.
+
+
+## Labs Completed
+- Inverter
+  1. Go to [Makerchip](makerchip.com) and click on launch makerchip IDE.
+  2. Go to editor and place the below TL-Verilog in place of //...
+
+		   $out = !$in;
+  3. Then click on 'compile'.
+- 2-input logic gates(eg:and gate)
+  1. Go to [Makerchip](makerchip.com) and click on launch makerchip IDE.
+  2. Go to editor and place the below TL-Verilog in place of //...
+
+		   $out = $in1 && $in2 ;
+  3. Then click on 'compile'.
+- Vector addition
+  1. Go to [Makerchip](makerchip.com) and click on launch makerchip IDE.
+  2. Go to editor and place the below TL-Verilog in place of //...
+
+		   $out[4:0] = $in1[3:0] + $in2[3:0];
+  3. Then click on 'compile'.
+- Multiplexers
+  1. Go to [Makerchip](makerchip.com) and click on launch makerchip IDE.
+  2. Go to editor and place the below TL-Verilog in place of //...
+
+		   $out = $sel? $in1 : $in2;
+  3. Then click on 'compile'.
+- Combinational Calculator
+  
+  1. Go to [Makerchip](makerchip.com) and click on launch makerchip IDE.
+  2. Go to editor and place the below TL-Verilog in place of //...
 
 				$sum[31:0] = $val1[31:0] + $val2[31:0];
 		   		$diff[31:0] = $val1[31:0] - $val2[31:0];
@@ -153,14 +199,13 @@ Then you will see the following results after this:
 		   		$quot[31:0] = $val1[31:0] / $val2[31:0];
 		​		$out[31:0] = $op[0] ? $sum : $op[1] ? $diff : $op[2] ? $prod : $qout ;
 
-3. Then click on 'compile'.
+  3. Then click on 'compile'.
 
-space for screenshot
-
-**2. Sequential calculator**
-
-1. Go to [Makerchip](makerchip.com) and click on launch makerchip IDE.
-2. Go to editor and place the below TL-Verilog in place of //...
+   space for screenshot
+- Sequential Calculator:
+ 
+  1. Go to [Makerchip](makerchip.com) and click on launch makerchip IDE.
+  2. Go to editor and place the below TL-Verilog in place of //...
 
 				$sum[31:0] = $val1[31:0] + $val2[31:0];
 		   		$diff[31:0] = $val1[31:0] - $val2[31:0];
@@ -169,24 +214,25 @@ space for screenshot
 		​		$out[31:0] = $op[0] ? $sum : $op[1] ? $diff : $op[2] ? $prod : $qout ;
 				$out[31:0] = $val1[31:0]
 
-3. Then click on 'compile'.
-screenshot
+  3. Then click on 'compile'.
+   screenshot
+- Fibonacci Series:
 
-**3. Fibonacci Sequence**
+  The Fibonacci Sequence is a sequence of whole numbers starting with two 1s, where each subsequent value in the sequence is the sum of the previous two values.
 
-The Fibonacci Sequence is a sequence of whole numbers starting with two 1s, where each subsequent value in the sequence is the sum of the previous two values.
-
-1. Go to [Makerchip](makerchip.com) and click on launch makerchip IDE.
-2. Go to editor and place the below TL-Verilog in place of //...
+  1. Go to [Makerchip](makerchip.com) and click on launch makerchip IDE.
+  2. Go to editor and place the below TL-Verilog in place of //...
 
 			$val[15:0] = $reset ? 1 : >>1$val + >>2$val;
 
-3. Then click on 'compile'.
+  3. Then click on 'compile'.
+  
+- Pipelining using TL-Verilog:
+  
+   **Pythagorean Theorem Pipeline**
 
-**4. Pythagorean Theorem Pipeline**
-
-1. Go to [Makerchip](makerchip.com) and click on launch makerchip IDE.
-2. Go to editor and place the below TL-Verilog in place of //...
+  1. Go to [Makerchip](makerchip.com) and click on launch makerchip IDE.
+  2. Go to editor and place the below TL-Verilog in place of //...
 
 			 |calc
      			 @0
@@ -205,12 +251,11 @@ The Fibonacci Sequence is a sequence of whole numbers starting with two 1s, wher
         			 @3
             			$cc[4:0] = sqrt($cc_sq);
 	    
-3. Then click on 'compile'.
-
-**4. Final claculator with vaidity and memory**
-
-1. Go to [Makerchip](makerchip.com) and click on launch makerchip IDE.
-2. Go to editor and place the below TL-Verilog in place of //...
+   3. Then click on 'compile'.
+ -Final calculator with validity and memory:
+ 
+   1. Go to [Makerchip](makerchip.com) and click on launch makerchip IDE.
+   2. Go to editor and place the below TL-Verilog in place of //...
 
 		|calc
     		  @0
@@ -241,8 +286,12 @@ The Fibonacci Sequence is a sequence of whole numbers starting with two 1s, wher
                       		$op[2:0] == 5 ? $val1:
                       		>>2$mem;
 	    
-3. Then click on 'compile'.
-   
+    3. Then click on 'compile'.
+
+## References
+- [Workshop Slides (Day 3)](https://github.com/stevehoover/RISC-V_MYTH_Workshop)
+
+  
    </details>
 
 ******************************************************************************************************************************************************
@@ -365,7 +414,7 @@ ALU stands for Arithmetic Logic Unit, a fundamental component of a computer's ce
 
 **This TL-Verilog is used for making a basic RISC-V CPU architecture but only from the PC to the decoder.**
 
-**2. Half-completed RISC-V based CPU which performs addition of number 1 to 9**
+**2. Basic RISC-V based CPU which performs addition of number 1 to 9**
 
 1. Go to [Makerchip](makerchip.com) and click on launch makerchip IDE.
 2. Go to editor and place the below TL-Verilog in place of //...
