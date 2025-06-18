@@ -389,6 +389,7 @@ When the following line of code as mentioned below is added on Makerchip, the si
 
 *passed = |cpu/xreg[10]>>5$value == (1+2+3+4+5+6+7+8+9);
 Here, in the instruction memory, register r10 has been used to store the sum value. The simulation passed message can be seen under the "Log" tab. We have used ">>5" (ahead by 5) operator, because instead of stopping the simulator immediately, we wait for a couple of more cycles so as to see a little bit more on the waveform.
+![Image](https://github.com/user-attachments/assets/f1cd162b-2d21-4905-be51-aca467c8eaf4)
 
 ## Labs for day 4
 
@@ -633,6 +634,24 @@ Here, in the instruction memory, register r10 has been used to store the sum val
 
 <details>
   <summary>Day 5: Complete Pipelined RISC-V CPU micro-architecture</summary>
+  ## Day 5: Complete Pipelined RISC-V CPU micro-architecture
+	
+The RISC-V core designed is divided into 5 pipeline stages. Pipelining in Makerchip is extremely simple. To define a pipeline use the following syntax:
+
+|<pipeline_name>
+  @<pipeline_stage>
+    instruction1 in the current stage
+    instruction2 in the current stage
+    .
+    .
+  @<pipeline_stage>
+    instruction1 in the current stage
+    instruction2 in the current stage
+    .
+    .
+Staging in a pipeline is a physical attribute with no impact to behaviour. At this point support for register file bypass is provided. All the instructions present in the RV32I base instruction set are implemented apart from FENCE, ECALL and EBREAK.
+
+## block diagram:
 
 # Lab: The complete pipelined CPU
 
