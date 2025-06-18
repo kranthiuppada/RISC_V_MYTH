@@ -652,7 +652,8 @@ The RISC-V core designed is divided into 5 pipeline stages. Pipelining in Makerc
 Staging in a pipeline is a physical attribute with no impact to behaviour. At this point support for register file bypass is provided. All the instructions present in the RV32I base instruction set are implemented apart from FENCE, ECALL and EBREAK.
 
 ## block diagram:
-
+  ![Image](https://github.com/user-attachments/assets/d98cca8d-ecff-4777-8946-2698d22d362c)
+  
 # Lab: The complete pipelined CPU
 
 This is the link to my work [CPU](https://myth.makerchip.com/sandbox/02kfkhXA6/0k5hOVx#)
@@ -843,12 +844,17 @@ This is the link to my work [CPU](https://myth.makerchip.com/sandbox/02kfkhXA6/0
 	    
 3. Then click on 'compile'.
 
+## output :
+
+
 
 
 </details>
 
 
 ******************************************************************************************************************************************************
+
+
 
 
 
