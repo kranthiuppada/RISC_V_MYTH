@@ -257,41 +257,8 @@ Explored the use of `$`-prefixed signals to create and maintain state in TL-Veri
 	    
    3. Then click on 'compile'.
       ![Image](https://github.com/user-attachments/assets/150753d3-e48a-4a8e-8db3-070dd5a8bf84)
- -Final calculator with validity and memory:
- 
-   1. Go to [Makerchip](makerchip.com) and click on launch makerchip IDE.
-   2. Go to editor and place the below TL-Verilog in place of //...
 
-		|calc
-    		  @0
-      		   $reset = *reset;
-     		 @1
-         		$valid[0:0] = $reset ? '0 : >>1$valid + 1;
-         		$valid_or_reset = $valid || $reset;
-         		$val2[31:0] = $rand2;
-        		 $val1[31:0] = >>2$out;
-         
-     		 ?$valid_or_reset
-         		@1
-            		$sum[31:0] = $val2[31:0] + $val1[31:0];
-            		$diff[31:0] = $val2[31:0] - $val1[31:0];
-   			 $prod[31:0] = $val2[31:0] * $val1[31:0];
-            		$div[31:0] = $val2[31:0] / $val1[31:0];
-
-      		@2
-      		?$valid_or_reset
-         		@2
-           		 $out[31:0] = $reset ? '0:
-                  		    $op[2:0] == 0 ? $sum :
-                   		   $op[2:0] == 1 ? $diff :
-                      		$op[2:0] == 2 ? $prod :
-                      		$op[2:0] == 3 ? $div :
-                      		$op[2:0] == 4 ? >>2$mem : >>2$out;
-            		$mem[31:0] = $reset ? '0:
-                      		$op[2:0] == 5 ? $val1:
-                      		>>2$mem;
-	    
-    3. Then click on 'compile'.
+  [Click here to view all TL-Verilog files for Day 3](https://github.com/kranthiuppada/RISC_V_MYTH/tree/main/LAB_WORK/DAY_3)
 
 ## References
 - [Workshop Slides (Day 3)](https://github.com/stevehoover/RISC-V_MYTH_Workshop)
