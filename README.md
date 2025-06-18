@@ -201,7 +201,7 @@ Explored the use of `$`-prefixed signals to create and maintain state in TL-Veri
 
   3. Then click on 'compile'.
 
-   space for screenshot
+   ![Image](https://github.com/user-attachments/assets/4b881ad3-254e-4eea-94aa-9346efdedcdc)
 - Sequential Calculator:
  
   1. Go to [Makerchip](makerchip.com) and click on launch makerchip IDE.
