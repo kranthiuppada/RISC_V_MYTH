@@ -85,12 +85,14 @@ Then you should see the same result as:
 
 <details>
   <summary>Day 2: Introduction to ABI and basic verification flow</summary>
-#3 Introduction to ABI and basic verification flow
+	
+## Day 2 : Introduction to ABI and basic verification flow
 	
 ##topics covered
  - What is ABI
     An Application Binary Interface (ABI) is a standard that defines the interface between compiled applications and the operating system, or between different binary modules. ABIs define the rules that compilers and assemblers must follow when generating binary code, ensuring that different code modules can be linked together and executed seamlessly.
 
+  ![Image](https://github.com/user-attachments/assets/61d0c9c8-6b2b-420a-9968-fdc337c46e94)
  - Why there are only 32 registers in RISC-V architecture
 
    Let’s look at an example load doubleword instruction below, which loads data into x8 register from memory, whose base address is present in register x23 and     offset is ‘16’. The way a computer sees this instruction is through a 32-bit binary pattern.
@@ -98,8 +100,15 @@ Then you should see the same result as:
     ![image](https://github.com/user-attachments/assets/10ff3f1e-280b-4c0d-ad70-dafc0aa67590)
 
     Focus on ‘rs2’ and ‘rs1’. They have 5 bits. Practically, to keep design simple, all registers in a RISC-V architecture is represented by 5-bit binary pattern.    Now the calculation is easy. 5-bits to represent registers, which means total number of registers is 2^5 = 32 registers
+ -  conclusion:
+    ld x8, 16(x23)
+    add x8, x24, x8
+    sd x8, 8(x23)
+ these instructions which operate on signed or unsigned integers are called base integer instructions RV64I. tructions.
+   1)add only operates on register they are called R- type instructions.
+   2)load only operates on two register,one immediate  they are called I- type instructions.
+   3)store only operates only on  source registers they are called S- type instructions.
     
-
 ## Labs for Day 2
 
 **1. simulating the 1 to n adder but using ABI**
