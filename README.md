@@ -30,6 +30,12 @@ RISC-V is an open standard instruction set architecture based on established red
 
 <details>
   <summary>Day 1: Introduction to RISC-V ISA and GNU compiler toolchain</summary>
+  	
+## Day 1 : Introduction to RISC-V ISA and GNU compiler toolchain
+ ISA is nothing but a language of the computer.This is the way we are going to talk to the computers.
+ - course about:
+   If a c program is neede to implement on a hardware ,first c program is compiled in its assembly language and converted  into machine language and these bits       are executed in layout.
+  
 
 ## Labs for Day 1  
 **1. Simple c program for adding numbers between 1 to n**
@@ -116,6 +122,7 @@ Then you should see the same result as:
  -  ABI does a system call through these particular registers ABI name give to register.
     These are ABI names through which programmer access the RISC-V CPU core through some system call function.
     
+    ![Image](https://github.com/user-attachments/assets/7fa98045-c01c-4954-a74c-fc32fd72b1c4)
 ## Labs for Day 2
 
 **1. simulating the 1 to n adder but using ABI**
@@ -163,6 +170,8 @@ Run the following steps in the terminal:
 Then you will see the following results after this:
 
 ![image](https://github.com/user-attachments/assets/43e37975-ee6d-4f8e-8bd2-844452451f75)
+
+ [Click here to view all TL-Verilog files for Day 3](https://github.com/kranthiuppada/RISC_V_MYTH/tree/main/LAB_WORK/DAY_2)
 
 </details>
 
