@@ -1,0 +1,44 @@
+# Compiled files
+*.out
+*.o
+*.obj
+*.elf
+*.bin
+*.hex
+
+# Assembly and dump outputs
+*.s
+*.asm
+*.dump
+
+# Log and debug files
+*.log
+*.vcd
+*.txt
+*.bak
+
+# Spike or simulation outputs
+a.out
+output*
+
+# VS Code files
+.vscode/
+*.code-workspace
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Image caches or generated screenshots
+*.png
+*.jpg
+*.jpeg
+
+# Makerchip temporary or export files
+*.html
+*.json
+*.svg
+
+# Build directories
+build/
+__pycache__/
