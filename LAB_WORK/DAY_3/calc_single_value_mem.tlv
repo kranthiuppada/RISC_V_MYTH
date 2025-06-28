@@ -1,3 +1,4 @@
+
 \m5_TLV_version 1d: tl-x.org
 \m5
    
@@ -22,16 +23,16 @@
          $diff[31:0] = $d1 - $d2;
          $prod[31:0] = $d1 * $d2;
          $quot[31:0] = $d1 / $d2;
-
+​
       @2
          // Save output to memory on op = 5
          $mem[31:0] = ($op == 3'b101 && $valid) ? (>>2$out) : >>2$mem;
-
+​
          // Main ALU result selection
          $alu_out[31:0] = ($op[1] ? 
                             ($op[0] ? $quot : $prod) : 
                             ($op[0] ? $diff : $sum));
-
+​
          // Final output mux: includes recall (op=100)
          $out[31:0] = $valid ? 
                         (($op == 3'b100) ? >>2$mem : $alu_out)
@@ -41,3 +42,72 @@
    *failed = 1'b0;
 \SV
    endmodule
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
